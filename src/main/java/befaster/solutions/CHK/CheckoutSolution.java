@@ -11,6 +11,11 @@ public class CheckoutSolution {
         int price = 0;
         int e = 1;
         for (int c=0; c < skus.length(); c++) {
+            if (skus.charAt(c) == 'B') {
+                all_B++;
+            }
+        }
+        for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'A') {
                 number_A++;
                 price += 50;
@@ -52,11 +57,12 @@ public class CheckoutSolution {
                 if (all_B > 0) {
                     all_B--;
                     price -= 30;
-                    e ++;
+                    e++;
                 }
             }
         }
         return price;
     }
 }
+
 
