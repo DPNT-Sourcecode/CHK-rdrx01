@@ -217,7 +217,3 @@ public class CheckoutSolution {
         return price;
     }
 }
-
-
-
-
