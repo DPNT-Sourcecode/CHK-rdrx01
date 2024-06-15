@@ -14,6 +14,12 @@ public class CheckoutSolution {
         int number_K = 0;
         int number_N = 0;
         int all_M = 0;
+        int number_P = 0;
+        int number_Q = 0;
+        int all_Q = 0;
+        int number_R = 0;
+        int number_U = 0;
+        int number_V = 0;
         for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'B') {
                 all_B++;
@@ -107,9 +113,17 @@ public class CheckoutSolution {
                 price += 10;
             }
             else if (skus.charAt(c) == 'P' ) {
-                
+                number_P ++;
+                price += 50;
+                if (number_P == 5) {
+                    price -= 5*50;
+                    price += 200;
+                    number_P = 0;
+                }
             }
             else if (skus.charAt(c) == 'Q' ) {
+                number_Q ++;
+                price += 30;
 
             }
             else if (skus.charAt(c) == 'R' ) {
@@ -160,5 +174,6 @@ public class CheckoutSolution {
         return price;
     }
 }
+
 
 
