@@ -11,9 +11,15 @@ public class CheckoutSolution {
         int price = 0;
         int number_F = 0;
         int number_H = 0;
+        int number_K = 0;
+        int number_N = 0;
+        int all_M = 0;
         for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'B') {
                 all_B++;
+            }
+            if (skus.charAt(c) == 'M') {
+                all_M ++;
             }
         }
         for (int c=0; c < skus.length(); c++) {
@@ -63,36 +69,45 @@ public class CheckoutSolution {
                 if (number_H == 5) {
                     price -= 50;
                     price += 45;
+
                 }
                 if (number_H == 10) {
                     price -= 95;
                     price += 80;
+                    number_H = 0;
                 }
 
             }
             else if (skus.charAt(c) == 'I' ) {
-
+                price += 35;
             }
             else if (skus.charAt(c) == 'J') {
-
+                price += 60;
             }
             else if (skus.charAt(c) == 'K' ) {
-
+                number_K ++;
+                price += 80;
+                if (number_K == 2 ) {
+                    price -= 160;
+                    price += 150;
+                    number_K = 0;
+                }
             }
             else if (skus.charAt(c) == 'L') {
-
+                price += 90;
             }
             else if (skus.charAt(c) =='M' ) {
-
+                price += 15;
             }
             else if (skus.charAt(c) == 'N' ) {
-
+                number_N ++;
+                price += 40;
             }
             else if (skus.charAt(c) == 'O' ) {
-
+                price += 10;
             }
             else if (skus.charAt(c) == 'P' ) {
-
+                
             }
             else if (skus.charAt(c) == 'Q' ) {
 
@@ -145,4 +160,5 @@ public class CheckoutSolution {
         return price;
     }
 }
+
 
