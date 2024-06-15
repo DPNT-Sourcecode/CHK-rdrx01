@@ -9,6 +9,7 @@ public class CheckoutSolution {
         int all_B = 0;
         int number_E = 0;
         int price = 0;
+        int b = 0;
         for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'B') {
                 all_B++;
@@ -29,7 +30,6 @@ public class CheckoutSolution {
                 }
             }
             else if (skus.charAt(c) == 'B') {
-                all_B ++;
                 number_B++;
                 price += 30;
 
@@ -56,15 +56,16 @@ public class CheckoutSolution {
                     number_E = 0;
                 }
             }
-            if (number_B == 2) {
-                price -= 60;
-                price += 45;
+            if (number_B >= 2 && c == skus.length()-1) {
+                price -= 60*number_B;
+                price += 45 * (number_B/2);
                 number_B = 0;
             }
         }
         return price;
     }
 }
+
 
 
 
