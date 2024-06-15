@@ -10,6 +10,7 @@ public class CheckoutSolution {
         int number_E = 0;
         int price = 0;
         int number_F = 0;
+        int number_H = 0;
         for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'B') {
                 all_B++;
@@ -52,6 +53,75 @@ public class CheckoutSolution {
                     price -= 10;
                     number_F = 0;
                 }
+            }
+            else if (skus.charAt(c) == 'G' ) {
+                price += 20;
+            }
+            else if (skus.charAt(c) == 'H' ) {
+                number_H ++;
+                price += 10;
+                if (number_H == 5) {
+                    price -= 50;
+                    price += 45;
+                }
+                if (number_H == 10) {
+                    price -= 95;
+                    price += 80;
+                }
+
+            }
+            else if (skus.charAt(c) == 'I' ) {
+
+            }
+            else if (skus.charAt(c) == 'J') {
+
+            }
+            else if (skus.charAt(c) == 'K' ) {
+
+            }
+            else if (skus.charAt(c) == 'L') {
+
+            }
+            else if (skus.charAt(c) =='M' ) {
+
+            }
+            else if (skus.charAt(c) == 'N' ) {
+
+            }
+            else if (skus.charAt(c) == 'O' ) {
+
+            }
+            else if (skus.charAt(c) == 'P' ) {
+
+            }
+            else if (skus.charAt(c) == 'Q' ) {
+
+            }
+            else if (skus.charAt(c) == 'R' ) {
+
+            }
+            else if (skus.charAt(c) == 'S' ) {
+
+            }
+            else if (skus.charAt(c) == 'T' ) {
+
+            }
+            else if (skus.charAt(c) == 'U' ) {
+
+            }
+            else if (skus.charAt(c) == 'V' ) {
+
+            }
+            else if (skus.charAt(c) == 'W' ) {
+
+            }
+            else if (skus.charAt(c) == 'X' ) {
+
+            }
+            else if (skus.charAt(c) == 'Y' ) {
+
+            }
+            else if (skus.charAt(c) == 'Z' ) {
 
             }
             else {
@@ -75,3 +145,4 @@ public class CheckoutSolution {
         return price;
     }
 }
+
