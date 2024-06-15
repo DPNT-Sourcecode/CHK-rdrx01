@@ -48,7 +48,7 @@ public class CheckoutSolution {
             else if (skus.charAt(c) == 'F') {
                 price +=10;
                 number_F ++;
-                if (number_F == 2) {
+                if (number_F > 2) {
                     price -= 10;
                     number_F = 0;
                 }
@@ -75,5 +75,6 @@ public class CheckoutSolution {
         return price;
     }
 }
+
 
 
