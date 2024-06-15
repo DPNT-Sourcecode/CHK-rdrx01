@@ -32,8 +32,12 @@ public class CheckoutSolution {
             if (skus.charAt(c) == 'D') {
                 price += 15;
             }
+            else {
+                return -1;
+            }
         }
         return price;
     }
 }
+
 
