@@ -42,21 +42,19 @@ public class CheckoutSolution {
             else if (skus.charAt(c) == 'E') {
                 number_E ++;
                 price += 40;
-                if (number_E == 2) {
-                    if (all_B > 0) {
-                        all_B--;
-                        price -= 30;
-                    }
-                }
+
             }
             else {
                 return -1;
+            }
+            if (number_E == 2) {
+                if (all_B > 0) {
+                    all_B--;
+                    price -= 30;
+                    number_E = 0;
+                }
             }
         }
         return price;
     }
 }
-
-
-
-
