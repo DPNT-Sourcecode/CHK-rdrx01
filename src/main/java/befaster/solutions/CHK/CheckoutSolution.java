@@ -59,9 +59,11 @@ public class CheckoutSolution {
             if (number_B >= 2 && c == skus.length()-1) {
                 price -= 30*number_B;
                 price += 45 * (number_B/2);
+                price += 30 * (number_B - 2*(number_B/2));
                 number_B = 0;
             }
         }
         return price;
     }
 }
+
