@@ -17,7 +17,7 @@ public class CheckoutSolution {
                     number_A = 0;
                 }
             }
-            if (skus.charAt(c) == 'B') {
+            else if (skus.charAt(c) == 'B') {
                 number_B++;
                 price += 30;
                 if (number_B == 2) {
@@ -26,10 +26,10 @@ public class CheckoutSolution {
                     number_B = 0;
                 }
             }
-            if (skus.charAt(c) == 'C') {
+            else if (skus.charAt(c) == 'C') {
                 price += 20;
             }
-            if (skus.charAt(c) == 'D') {
+            else if (skus.charAt(c) == 'D') {
                 price += 15;
             }
             else {
@@ -39,5 +39,6 @@ public class CheckoutSolution {
         return price;
     }
 }
+
 
 
