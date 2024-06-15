@@ -27,6 +27,9 @@ public class CheckoutSolution {
             if (skus.charAt(c) == 'M') {
                 all_M ++;
             }
+            if (skus.charAt(c) == 'Q') {
+                all_Q++;
+            }
         }
         for (int c=0; c < skus.length(); c++) {
             if (skus.charAt(c) == 'A') {
@@ -125,33 +128,50 @@ public class CheckoutSolution {
                 number_Q ++;
                 price += 30;
 
+
             }
             else if (skus.charAt(c) == 'R' ) {
-
+                number_R ++;
+                price += 50;
             }
             else if (skus.charAt(c) == 'S' ) {
-
+                price += 30;
             }
             else if (skus.charAt(c) == 'T' ) {
-
+                price += 20;
             }
             else if (skus.charAt(c) == 'U' ) {
-
+                number_U ++;
+                price += 40;
+                if (number_U > 3) {
+                    price -= 40;
+                    number_U = 0;
+                }
             }
             else if (skus.charAt(c) == 'V' ) {
-
+                number_V ++;
+                price += 50;
+                if (number_V == 2) {
+                    price -= 100;
+                    price += 90;
+                }
+                if (number_V == 3) {
+                    price -= 140;
+                    price += 130;
+                    number_V = 0;
+                }
             }
             else if (skus.charAt(c) == 'W' ) {
-
+                price += 20;
             }
             else if (skus.charAt(c) == 'X' ) {
-
+                price += 90;
             }
             else if (skus.charAt(c) == 'Y' ) {
-
+                price += 10;
             }
             else if (skus.charAt(c) == 'Z' ) {
-
+                price += 50;
             }
             else {
                 return -1;
@@ -164,16 +184,40 @@ public class CheckoutSolution {
                     number_E = 0;
                 }
             }
+            if (number_N == 3) {
+                if (all_M > 0) {
+                    all_M--;
+                    price -= 15;
+                    number_N = 0;
+                }
+            }
+            if (number_R == 3) {
+                if (all_Q > 0) {
+                    all_Q --;
+                    number_Q --;
+                    price -=30;
+                    number_R = 0;
+
+                }
+            }
+
             if (number_B >= 2 && c == skus.length()-1) {
                 price -= 30*number_B;
                 price += 45 * (number_B/2);
                 price += 30 * (number_B - 2*(number_B/2));
                 number_B = 0;
             }
+            if (number_Q >= 3 && c == skus.length() - 1) {
+                price -= 30 * number_Q;
+                price += 80 * (number_Q / 3);
+                price += 30 * (number_Q - 3 *(number_Q/3));
+                number_Q = 0;
+            }
         }
         return price;
     }
 }
+
 
 
 
